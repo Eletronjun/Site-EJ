@@ -665,10 +665,6 @@ button {
   margin-bottom: 14px;
 }
 
-.footer-logo-text {
-  color: var(--white);
-}
-
 .footer-brand p {
   font-size: 0.88rem;
   line-height: 1.6;

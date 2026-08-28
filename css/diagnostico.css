@@ -1,0 +1,312 @@
+/* Container geral */
+.diagnostico-container {
+  background-color: #f8f8f8;
+  padding: 50px 20px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  color: #1A1A1A;
+}
+
+/* Cabeçalho */
+.subtitulo {
+  font-style: italic;
+  color: #1A1A1A;
+  margin-bottom: 8px;
+}
+
+.titulo-principal {
+  color: #2d8a1e;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+/* Grid de 3 Colunas */
+.colunas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Estilização das Colunas */
+.coluna h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.coluna p,
+
+.coluna ol {
+  font-style: italic;
+  color: #1A1A1A;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Lista numerada centralizada */
+.coluna ol {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.coluna ol li {
+  margin-bottom: 5px;
+}
+
+.obrigatorio {
+  color: #d93025; /* Asterisco vermelho */
+}
+
+/* Ajuste Responsivo para Celulares */
+@media (max-width: 768px) {
+  .colunas-grid {
+    grid-template-columns: 1fr; /* Muda para 1 coluna em telas menores */
+  }
+}
+
+/* ESTILOS DO FORMULÁRIO DE DIAGNÓSTICO */
+
+/* Cartão Verde de Fundo */
+.form-card {
+  background-color: #dcf5d6;
+  border-radius: 20px;
+  padding: 35px 30px;
+  max-width: 500px;
+  margin: 30px auto;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Agrupamento Vertical de Cada Campo */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  color: #223e1b;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* Cor do Asterisco */
+.obrigatorio {
+  color: #d93025;
+}
+
+/* Estilização das Caixas de Texto */
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #7a7a7a;
+  border-radius: 2px;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.campo textarea {
+  resize: none;
+  height: 100px;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+  color: #999999;
+}
+
+/* Campo de Telefone com Bandeira */
+.input-com-bandeira {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #7a7a7a;
+  border-radius: 2px;
+  padding-left: 10px;
+}
+
+.input-com-bandeira .bandeira {
+  font-size: 1.1rem;
+  margin-right: 8px;
+}
+
+.input-com-bandeira input {
+  border: none;
+  padding-left: 0;
+}
+
+/* Botão Enviar */
+.btn-container {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.btn-enviar {
+  background-color: #277908;
+  color: #ffffff;
+  border: none;
+  padding: 10px 45px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #1f6106;
+}
+/* Container Geral */
+.faq-container {
+  background-color: #f7f7f7; /* Fundo cinza bem claro */
+  padding: 60px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Título Principal */
+.faq-titulo {
+  color: #277908;            /* Tom verde da marca */
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 45px;
+}
+
+/* Grade de 2 Colunas */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Coluna esquerda (Pergunta) e Direita (Resposta) */
+  gap: 30px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* Coluna da Esquerda (Perguntas) */
+.faq-pergunta {
+  font-weight: bold;
+  font-style: italic;
+  color: #1a1a1a;
+  text-align: right;              /* Aponta o texto para o centro */
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Coluna da Direita (Respostas) */
+.faq-resposta {
+  font-style: italic;
+  color: #444444;
+  text-align: left;               /* Inicia o texto a partir do centro */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Ajuste para Celulares */
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;    /* Empilha em 1 coluna única */
+    gap: 20px;
+  }
+
+  .faq-pergunta {
+    text-align: left;   /* No celular fica melhor ler alinhado à esquerda */
+  }
+}
+
+/* FOOTER */
+
+/* Container Geral Escuro */
+.site-footer {
+  background-color: #0e0e0e; /* Fundo quase preto */
+  color: #ffffff;
+  padding: 50px 20px 20px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Distribuição das Colunas (Flexbox) */
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+.footer-logo .logo-img {
+  max-width: 300px; /* Ajuste a largura como preferir (ex: 220px, 250px) */
+  width: 100%;
+  height: auto;
+}
+
+/* Listas de Links sem marcadores */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 14px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+/* Redes Sociais */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.social-item:hover {
+  opacity: 0.7;
+}
+
+/* Linha Divisória e Texto de Copyright */
+.footer-bottom {
+  border-top: 1px solid #000000;
+  padding: 20px 0;
+}
+
+.footer-bottom p {
+  font-size: 0.82rem; 
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Ajuste Responsivo para Celulares */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Gratuito | EletronJun</title>
+<meta name="description" content="Conheça a história, a missão, a visão e os valores da EletronJun, empresa júnior de Engenharia Eletrônica e Engenharia de Software da UnB.">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/diagnostico.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<header class="site-header" id="header">
+  <div class="container header-inner">
+
+    <a href="../index.html" class="logo" aria-label="EletronJun — página inicial">
+      <img class="logo-img" src="../assets/logo-full.png" alt="EletronJun" width="1400" height="304">
+    </a>
+
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menu de navegação">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="primaryNav">
+      <ul class="nav-list">
+        <li><a href="../index.html" class="nav-link">Início</a></li>
+        <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+        <li><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
+        <li><a href="#" class="nav-link">Blog</a></li>
+        <li><a href="#" class="nav-link">Projetos</a></li>
+      </ul>
+      <a href="#" class="btn btn-primary btn-sm nav-cta active">Diagnóstico Gratuito</a>
+    </nav>
+  </div>
+</header>
+
+ <!-- Peça seu Diagnóstico -->
+<section class="diagnostico-container">
+  <header class="header">
+    <p class="subtitulo">Descubra se seu projeto é viável, sem compromisso</p>
+    <h1 class="titulo-principal">Peça seu Diagnóstico Gratuito</h1>
+  </header>
+
+  <div class="colunas-grid">
+    <article class="coluna coluna-diagnostico">
+      <h2>O que é o diagnóstico?</h2>
+      <p>O Diagnóstico Gratuito é uma primeira conversa técnica com a nossa equipe, sem custo e sem compromisso, para entender sua ideia e apontar o melhor caminho para tirá-la do papel.</p>
+    </article>
+
+    <article class="coluna coluna-incluso">
+      <h2>O que está incluso?</h2>
+      <ol>
+        <li>Avaliação inicial da viabilidade técnica do seu projeto;</li>
+        <li>Indicação do serviço mais adequado para a sua necessidade;</li>
+        <li>Estimativa de prazo e próximos passos.</li>
+      </ol>
+    </article>
+
+    <article class="coluna coluna-funciona">
+      <h2>Como funciona? <span class="obrigatorio">*</span></h2>
+      <ol>
+        <li>Preencha o formulário abaixo com informações sobre seu projeto;</li>
+        <li>Nossa equipe analisa sua ideia;</li>
+        <li>Você recebe um retorno com nossas recomendações em até 5 dias úteis.</li>
+      </ol>
+    </article>
+  </div>
+</section>
+
+
+ <!-- Formulário de Contato -->
+<div class="form-card">
+  <form action="#" method="POST">
+    
+    <div class="campo">
+      <label for="nome">Nome <span class="obrigatorio">*</span></label>
+      <input type="text" id="nome" name="nome" placeholder="Qual seu nome?" required>
+    </div>
+
+    <div class="campo">
+      <label for="email">E-mail <span class="obrigatorio">*</span></label>
+      <input type="email" id="email" name="email" placeholder="Seu melhor e-mail." required>
+    </div>
+
+    <div class="campo">
+      <label for="telefone">Telefone/WhatsApp <span class="obrigatorio">*</span></label>
+      <div class="input-com-bandeira">
+        <span class="bandeira">🇧🇷</span>
+        <input 
+          type="tel" 
+          id="telefone" 
+          name="telefone" 
+          placeholder="+55 (99) 99999-9999" 
+          inputmode="numeric"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          required
+        >
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="empresa">Empresa (opcional)</label>
+      <input type="text" id="empresa" name="empresa" placeholder="Qual o nome da sua Empresa?">
+    </div>
+
+    <div class="campo">
+      <label for="descricao">Descreva brevemente seu projeto ou ideia <span class="obrigatorio">*</span></label>
+      <textarea id="descricao" name="descricao" placeholder="Explique um pouco do que você tem em mente." required></textarea>
+    </div>
+
+    <div class="btn-container">
+      <button type="submit" class="btn-enviar">Enviar</button>
+    </div>
+
+  </form>
+</div>
+
+<section class="faq-container">
+  <h2 class="faq-titulo">Dúvidas frequentes</h2>
+
+  <div class="faq-grid">
+    <div class="faq-pergunta">
+      O diagnóstico é realmente gratuito?
+    </div>
+    <div class="faq-resposta">
+      Sim, totalmente gratuito e sem compromisso de contratação!
+    </div>
+
+    <div class="faq-pergunta">
+      Quanto tempo leva para ter um retorno?
+    </div>
+    <div class="faq-resposta">
+      Normalmente respondemos em até 5 dias úteis após o envio do formulário.
+    </div>
+
+    <div class="faq-pergunta">
+      Preciso ter um projeto pronto para pedir o diagnóstico?
+    </div>
+    <div class="faq-resposta">
+      Não. Você pode ter apenas uma ideia inicial, é justamente para isso que o diagnóstico existe!
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <!-- Logo -->
+    <div class="footer-col footer-logo">
+      <img src="../assets/logo-footer.svg" alt="EletronJun" class="logo-img" href="index.html">
+    </div>
+
+    <!-- Seções -->
+    <div class="footer-col">
+      <ul class="footer-links">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre Nós</a></li>
+        <li><a href="#">Serviços</a></li>
+      </ul>
+    </div>
+
+    <!-- Seções 2 -->
+    <div class="footer-col">
+      <ul class="footer-links">
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Projetos</a></li>
+        <li><a href="#">Diagnóstico Gratuito</a></li>
+      </ul>
+    </div>
+
+    <!-- Redes Sociais -->
+    <div class="footer-col footer-social">
+      <a href="https://www.instagram.com/eletronjun/" class="social-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.facebook.com/eletronjun" class="social-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.linkedin.com/company/eletronjun" class="social-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        <span>LinkedIn</span> 
+      </a>
+    </div>
+
+  </div>
+
+<!-- LINHA DE DIREITOS AUTORAIS-->
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 EletronJun — Empresa Júnior de Engenharia Eletrônica e de Software. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>

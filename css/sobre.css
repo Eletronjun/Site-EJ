@@ -129,7 +129,7 @@
 .movement {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #0c1712 0%, var(--green-dark) 130%);
+  background: #F4F6F4;
   padding: 84px 0;
 }
 
@@ -158,8 +158,8 @@
 }
 
 .movement-text p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
+  color: black;
+  font-size: 1.1rem;
   margin-bottom: 16px;
 }
 

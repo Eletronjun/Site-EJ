@@ -73,7 +73,7 @@
 
 /* Cartão Verde de Fundo */
 .form-card {
-  background-color: #dcf5d6;
+  background-color: #408c29;
   border-radius: 20px;
   padding: 35px 30px;
   max-width: 500px;
@@ -90,7 +90,7 @@
 
 .campo label {
   font-size: 0.9rem;
-  color: #223e1b;
+  color: #ffffff;
   margin-bottom: 6px;
   font-weight: 500;
 }
@@ -151,18 +151,19 @@
 }
 
 .btn-enviar {
-  background-color: #277908;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #343434;
   border: none;
+  border-radius: 10px;          /* Bordas levemente arredondadas */
   padding: 10px 45px;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 2px;
   transition: background-color 0.2s ease;
 }
 
 .btn-enviar:hover {
-  background-color: #1f6106;
+  background-color: #343434;
+  color: #ffffff;
 }
 /* Container Geral */
 .faq-container {

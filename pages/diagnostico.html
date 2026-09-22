@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -78,7 +78,7 @@
 
  <!-- Formulário de Contato -->
 <div class="form-card">
-  <form action="#" method="POST">
+  <form action="https://formspree.io/f/xwlklgrn" method="POST" spellcheck="false">
     
     <div class="campo">
       <label for="nome">Nome <span class="obrigatorio">*</span></label>
@@ -99,8 +99,8 @@
           id="telefone" 
           name="telefone" 
           placeholder="+55 (99) 99999-9999" 
-          inputmode="numeric"
-          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          maxlength="19"
+          oninput="formatarTelefone(this)"
           required
         >
       </div>
@@ -161,9 +161,9 @@
     <!-- Seções -->
     <div class="footer-col">
       <ul class="footer-links">
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Sobre Nós</a></li>
-        <li><a href="#">Serviços</a></li>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="../servicos.html">Serviços</a></li>
       </ul>
     </div>
 
@@ -172,7 +172,7 @@
       <ul class="footer-links">
         <li><a href="#">Blogs</a></li>
         <li><a href="#">Projetos</a></li>
-        <li><a href="#">Diagnóstico Gratuito</a></li>
+        <li><a href="diagnostico.html">Diagnóstico Gratuito</a></li>
       </ul>
     </div>
 

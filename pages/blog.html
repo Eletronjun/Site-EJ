@@ -1,7 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | EletronJun</title>
+    <meta name="description" content="Artigos sobre tecnologia, inovação, engenharia eletrônica e software pela EletronJun.">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/blog.css">
 </head>
@@ -21,11 +31,11 @@
                 <ul class="nav-list">
                     <li><a href="../index.html" class="nav-link">Início</a></li>
                     <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
-                    <li><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="../servicos.html" class="nav-link">Serviços</a></li>
                     <li><a href="blog.html" class="nav-link active">Blog</a></li>
                     <li><a href="#" class="nav-link">Projetos</a></li>
                 </ul>
-                <a href="#" class="btn btn-primary btn-sm nav-cta">Diagnóstico Gratuito</a>
+                <a href="diagnostico.html" class="btn btn-primary btn-sm nav-cta">Diagnóstico Gratuito</a>
             </nav>
         </div>
     </header>
@@ -38,16 +48,18 @@
 
     <section class="blog-feature">
         <h2>Em destaque</h2>
-        <article class="feature-card">
-            <div class="featured-overlay"></div>
-            <div class="featured-text">
-                <h3>Tablets como Cadernos: A Revolução Digital nas Instituições de Ensino</h3>
-                <p>
-                    Descubra como os tablets estão substituindo os cadernos:
-                    benefícios, desafios e o futuro da educação digital nas escolas e nas universidades.
-                </p>
-            </div>
-        </article>
+        <a href="artigo_tablet.html" class="feature-card-link">
+            <article class="feature-card">
+                <div class="featured-overlay"></div>
+                <div class="featured-text">
+                    <h3>Tablets como Cadernos: A Revolução Digital nas Instituições de Ensino</h3>
+                    <p>
+                        Descubra como os tablets estão substituindo os cadernos:
+                        benefícios, desafios e o futuro da educação digital nas escolas e nas universidades.
+                    </p>
+                </div>
+            </article>
+        </a>
     </section>
 
     <ul class="category-list">
@@ -87,10 +99,10 @@
                     <span class="post-category">Curiosidades</span>
                 
                 <h3 class="post-title">
-                    Tablets como cadernos: A revoluço digital nas instiituiçes de Ensino</h3>
+                    Tablets como cadernos: A revolução digital nas instituições de Ensino</h3>
             
                 <p class="post-summary">
-                    Descubra como tablets esto transformando o aprendizado em escolas e universidades</p>
+                    Descubra como tablets estão transformando o aprendizado em escolas e universidades</p>
                 </div>
             </a>
         </article>
@@ -138,15 +150,19 @@
             <nav class="footer-nav" aria-label="Links do rodapé">
                 <a href="../index.html">Início</a>
                 <a href="sobre.html">Sobre Nós</a>
-                <a href="../index.html#servicos">Serviços</a>
+                <a href="../servicos.html">Serviços</a>
                 <a href="blog.html">Blog</a>
                 <a href="#">Projetos</a>
                 <a href="diagnostico.html">Diagnóstico Gratuito</a>
             </nav>
 
             <div class="footer-social">
-                <a href="#" class="social-icon" aria-label="Instagram">IG</a>
-                <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+                <a href="https://www.instagram.com/eletronjun/" aria-label="Instagram" class="social-icon" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/company/eletronjun/posts/?feedView=all" aria-label="LinkedIn" class="social-icon" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="11" x2="8" y2="17"/><line x1="8" y1="7.5" x2="8" y2="7.51"/><path d="M12 17v-3.5a2.5 2.5 0 0 1 5 0V17"/></svg>
+                </a>
             </div>
         </div>
 
@@ -162,8 +178,6 @@
 
     <script src="../js/script.js"></script>
     <script src="../js/blog.js"></script>
-
-</body>
 
 </body>
 

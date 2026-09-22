@@ -6,6 +6,16 @@ body.blog-page {
     padding: 40px 20px;
 }
 
+.feature-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.feature-card-link:hover .feature-card {
+    filter: brightness(1.05);
+}
+
 .feature-card {
     position: relative;
     background-image: url("../assets/tablet.jpg");
@@ -14,6 +24,7 @@ body.blog-page {
     border-radius: 2px;
     overflow: hidden;
     min-height: 430px;
+    transition: filter 0.2s var(--ease, ease);
 }
 
 .featured-overlay{

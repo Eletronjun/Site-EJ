@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+
+<body class="blog-page">
+
+    <header class="site-header" id="header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo" aria-label="EletronJun — página inicial">
+                <img class="logo-img" src="../assets/logo-full.png" alt="EletronJun" width="1400" height="304">
+            </a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav"
+                aria-label="Abrir menu de navegação">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="primaryNav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Início</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="#" class="nav-link">Projetos</a></li>
+                </ul>
+                <a href="#" class="btn btn-primary btn-sm nav-cta">Diagnóstico Gratuito</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="blog-intro">
+        <h2 class="intro-title">Explore mais sobre <span class="highlight">tecnologia</span> e <span
+                class="highlight">inovação</span></h2>
+        <input type="text" class="search-bar" placeholder="Buscar artigos...">
+    </section>
+
+    <section class="blog-feature">
+        <h2>Em destaque</h2>
+        <article class="feature-card">
+            <div class="featured-overlay"></div>
+            <div class="featured-text">
+                <h3>Tablets como Cadernos: A Revolução Digital nas Instituições de Ensino</h3>
+                <p>
+                    Descubra como os tablets estão substituindo os cadernos:
+                    benefícios, desafios e o futuro da educação digital nas escolas e nas universidades.
+                </p>
+            </div>
+        </article>
+    </section>
+
+    <ul class="category-list">
+        <li class="category-item active" data-filter="todos">Todos</li>
+        <li class="category-item" data-filter="engenharia">Engenharia</li>
+        <li class="category-item" data-filter="curiosidades">Curiosidades</li>
+        <li class="category-item" data-filter="sistemas-eletronicos">Sistemas eletrônicos</li>
+    </ul>
+
+    <!-- seçao para postar noticias no blog -->
+    <section class="posts">
+        <article class="post-card" data-category="sistemas-eletronicos">
+            <a href="#" class="post-card-link">
+                <img 
+                    class="post-image" 
+                    src="../assets/image3.webp" 
+                    alt="Máquinas antifurto em uma loja">
+
+                <div class="post-content">
+                    <span class="post-category">Sistemas eletrônicos</span>
+
+                    <h3 class="post-title"> Como funcionam as máquinas antifurto?</h3>
+
+                    <p class="post-summary">resumo </p>
+                </div>
+            </a>
+        </article>
+
+        <article class="post-card" data-category="curiosidades">
+            <a href="artigo_tablet.html" class="post-card-link">
+                <img
+                    class="post-image"
+                    src = "../assets/tablet.jpg"
+                    alt="Pessoa utilizando um tablet">
+
+                <div class="post-content">
+                    <span class="post-category">Curiosidades</span>
+                
+                <h3 class="post-title">
+                    Tablets como cadernos: A revoluço digital nas instiituiçes de Ensino</h3>
+            
+                <p class="post-summary">
+                    Descubra como tablets esto transformando o aprendizado em escolas e universidades</p>
+                </div>
+            </a>
+        </article>
+    </section>
+
+    <section class="newsletter" aria-labelledby="newsletter-title">
+        <div class="newsletter-inner">
+            <div class="newsletter-text">
+                <h2 id="newsletter-title">Não perca nenhum conteúdo</h2>
+                <p>Receba nossos artigos e novidades direto no seu e-mail, sem spam.</p>
+            </div>
+
+            <form class="newsletter-form">
+                <label class="sr-only" for="newsletter-email">Seu e-mail</label>
+
+                <input id="newsletter-email" type="email" placeholder="seu@email.com">
+
+                <button type="button" class="btn btn-primary">
+                    Inscreva-se
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section class="blog-cta">
+        <h2>Quer saber como podemos ajudar seu projeto?</h2>
+        <a href="diagnostico.html" class="btn btn-primary">
+            Peça seu diagnóstico gratuito
+        </a>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo" aria-label="EletronJun — início">
+                    <img class="logo-img footer-logo" src="../assets/logo-footer.svg" alt="EletronJun">
+                </a>
+
+                <p>
+                    Empresa Júnior de Engenharia Eletrônica e de Software da
+                    Universidade de Brasília.
+                </p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Links do rodapé">
+                <a href="../index.html">Início</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="../index.html#servicos">Serviços</a>
+                <a href="blog.html">Blog</a>
+                <a href="#">Projetos</a>
+                <a href="diagnostico.html">Diagnóstico Gratuito</a>
+            </nav>
+
+            <div class="footer-social">
+                <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+                <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>
+                    © 2026 EletronJun — Empresa Júnior de Engenharia Eletrônica e de
+                    Software. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/blog.js"></script>
+
+</body>
+
+</body>
+
+</html>

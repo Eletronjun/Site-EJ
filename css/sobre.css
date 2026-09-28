@@ -9,7 +9,7 @@
   align-items: flex-end;
   min-height: 440px;
   /* Placeholder — troque pela foto da equipe quando você enviar o arquivo */
-  background: #0c1712 url("../assets/fotoejevento.jpg") center 20% / cover no-repeat;
+  background: #0c1712 url("../assets/fotoejevento.webp") center 20% / cover no-repeat;
   padding: clamp(60px, 9vw, 100px) 0 56px;
 }
 

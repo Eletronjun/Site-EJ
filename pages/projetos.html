@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos | EletronJun</title>
+  <meta name="description" content="Conheça os projetos desenvolvidos pela EletronJun em Engenharia Eletrônica e Software: monitoramento, controle eletrônico e circuitos analógicos.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/projetos.css">
+</head>
+<body class="projetos-page">
+
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="EletronJun — página inicial">
+        <img class="logo-img" src="../assets/logo-full.png" alt="EletronJun" width="1400" height="304">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menu de navegação">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="primaryNav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Início</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+          <li><a href="../servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="projetos.html" class="nav-link active">Projetos</a></li>
+        </ul>
+        <a href="diagnostico.html" class="btn btn-primary btn-sm nav-cta">Diagnóstico Gratuito</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO — Imagem principal (Placeholder até envio da imagem oficial) -->
+    <section class="projetos-hero" id="top">
+      <div class="container projetos-hero-inner">
+        <h1 class="projetos-hero-title">
+          Ideias que viraram <span class="highlight">soluções reais.</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Seção de Projetos e Filtros -->
+    <section class="projetos-section">
+      <div class="container">
+        
+        <!-- Lista de Categorias / Filtros -->
+        <div class="filter-wrapper">
+          <ul class="filter-list" role="tablist" aria-label="Filtro de categorias de projetos">
+            <li>
+              <button type="button" class="filter-btn active" data-filter="todos" role="tab" aria-selected="true">
+                TODOS
+              </button>
+            </li>
+            <li>
+              <button type="button" class="filter-btn" data-filter="monitoramento" role="tab" aria-selected="false">
+                Monitoramento e transmissão de dados
+              </button>
+            </li>
+            <li>
+              <button type="button" class="filter-btn" data-filter="controle" role="tab" aria-selected="false">
+                Controle Eletrônico
+              </button>
+            </li>
+            <li>
+              <button type="button" class="filter-btn" data-filter="analogicos" role="tab" aria-selected="false">
+                Circuitos Analógicos
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Grid de Cards de Projetos -->
+        <div class="projetos-grid" id="projetosGrid">
+
+          <!-- Card 1: Projeto coleta de dados (Figma) -->
+          <article class="projeto-card" data-category="monitoramento">
+            <div class="projeto-image-wrap">
+              <img 
+                src="../assets/projeto-coleta-dados.webp" 
+                alt="Placa de circuito do Projeto coleta de dados" 
+                class="projeto-image" 
+                loading="lazy">
+            </div>
+            <div class="projeto-content">
+              <span class="projeto-tag">Monitoramento e transmissão de dados</span>
+              <h2 class="projeto-title">Projeto coleta de dados</h2>
+              <p class="projeto-desc">
+                Desenvolvimento de um sistema que monitora parâmetros de uma temperatura e umidade de diferentes ambientes com variações de temperatura entre -50ºC até 125ºC
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2: Controle Eletrônico -->
+          <article class="projeto-card" data-category="controle">
+            <div class="projeto-image-wrap">
+              <img 
+                src="../assets/image3.webp" 
+                alt="Módulo de controle eletrônico e automação" 
+                class="projeto-image" 
+                loading="lazy">
+            </div>
+            <div class="projeto-content">
+              <span class="projeto-tag">Controle Eletrônico</span>
+              <h2 class="projeto-title">Sistema de Controle e Sensoriamento</h2>
+              <p class="projeto-desc">
+                Desenvolvimento de circuitos de controle e acionamento inteligente com alta confiabilidade, precisão operacional e comunicação em tempo real.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Circuitos Analógicos -->
+          <article class="projeto-card" data-category="analogicos">
+            <div class="projeto-image-wrap">
+              <img 
+                src="../assets/cogumelos.webp" 
+                alt="Layout de circuito impresso para processamento analógico" 
+                class="projeto-image" 
+                loading="lazy">
+            </div>
+            <div class="projeto-content">
+              <span class="projeto-tag">Circuitos Analógicos</span>
+              <h2 class="projeto-title">Placa de Condicionamento Analógico</h2>
+              <p class="projeto-desc">
+                Projeto conceitual e layout de PCB voltado para filtragem de ruído, amplificação e instrumentação de sinais analógicos de alta fidelidade.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Mensagem de estado vazio (caso nenhum projeto corresponda) -->
+        <p class="projetos-empty" id="projetosEmpty" style="display: none;">
+          Nenhum projeto encontrado nesta categoria no momento.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Seção CTA: Quer ver sua ideia aqui? -->
+    <section class="projetos-cta">
+      <div class="container projetos-cta-inner">
+        <h2 class="projetos-cta-title">Quer ver sua ideia aqui?</h2>
+        <a href="diagnostico.html" class="btn btn-primary projetos-cta-btn">
+          Peça seu diagnóstico gratuito
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botão Flutuante do WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/5561974027117" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M16 4C9.4 4 4 9.4 4 16c0 2.4.7 4.6 1.9 6.5L4 28l5.7-1.8C11.5 27.3 13.7 28 16 28c6.6 0 12-5.4 12-12S22.6 4 16 4Zm0 21.8c-2 0-3.9-.6-5.5-1.6l-.4-.2-3.4 1.1 1.1-3.3-.2-.4C6.6 19.9 6 18 6 16c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 9.8-10 9.8Zm5.4-7.3c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3Z"/>
+    </svg>
+  </a>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Logo -->
+      <div class="footer-col footer-logo">
+        <a href="../index.html" aria-label="EletronJun — início">
+          <img src="../assets/logo-footer.svg" alt="EletronJun" class="logo-img">
+        </a>
+      </div>
+
+      <!-- Links Coluna 1 -->
+      <div class="footer-col">
+        <ul class="footer-links">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="../servicos.html">Serviços</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Coluna 2 -->
+      <div class="footer-col">
+        <ul class="footer-links">
+          <li><a href="blog.html">Blogs</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="diagnostico.html">Diagnóstico Gratuito</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes Sociais -->
+      <div class="footer-col footer-social">
+        <a href="https://www.instagram.com/eletronjun/" class="social-item" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span>eletronjun</span>
+        </a>
+        <a href="https://www.facebook.com/eletronjun" class="social-item" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          <span>EletronJun</span>
+        </a>
+        <a href="https://www.linkedin.com/company/eletronjun" class="social-item" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <span>LinkedIn</span> 
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Linha de Copyright -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 EletronJun — Empresa Júnior de Engenharia Eletrônica e de Software. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/projetos.js"></script>
+</body>
+</html>

@@ -13,34 +13,13 @@
 
 <link rel="stylesheet" href="../css/styles.css">
 <link rel="stylesheet" href="../css/diagnostico.css">
+<script src="../js/components.js"></script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="container header-inner">
-
-    <a href="../index.html" class="logo" aria-label="EletronJun — página inicial">
-      <img class="logo-img" src="../assets/logo-full.png" alt="EletronJun" width="1400" height="304">
-    </a>
-
-    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menu de navegação">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav" id="primaryNav">
-      <ul class="nav-list">
-        <li><a href="../index.html" class="nav-link">Início</a></li>
-        <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
-        <li><a href="../servicos.html" class="nav-link">Serviços</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="projetos.html" class="nav-link">Projetos</a></li>
-      </ul>
-      <a href="#" class="btn btn-primary btn-sm nav-cta active">Diagnóstico Gratuito</a>
-    </nav>
-  </div>
-</header>
+<site-header data-root="../" data-active="diagnostico"></site-header>
 
  <!-- Peça seu Diagnóstico -->
 <section class="diagnostico-container">
@@ -150,54 +129,8 @@
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-container">
-    
-    <!-- Logo -->
-    <div class="footer-col footer-logo">
-      <img src="../assets/logo-footer.svg" alt="EletronJun" class="logo-img" href="index.html">
-    </div>
+<site-footer data-root="../"></site-footer>
 
-    <!-- Seções -->
-    <div class="footer-col">
-      <ul class="footer-links">
-        <li><a href="../index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="../servicos.html">Serviços</a></li>
-      </ul>
-    </div>
-
-    <!-- Seções 2 -->
-    <div class="footer-col">
-      <ul class="footer-links">
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="diagnostico.html">Diagnóstico Gratuito</a></li>
-      </ul>
-    </div>
-
-    <!-- Redes Sociais -->
-    <div class="footer-col footer-social">
-      <a href="https://www.instagram.com/eletronjun/" class="social-item">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        <span>Instagram</span>
-      </a>
-      <a href="https://www.facebook.com/eletronjun" class="social-item">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-        <span>Facebook</span>
-      </a>
-      <a href="https://www.linkedin.com/company/eletronjun" class="social-item">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        <span>LinkedIn</span> 
-      </a>
-    </div>
-
-  </div>
-
-<!-- LINHA DE DIREITOS AUTORAIS-->
-  <div class="footer-bottom">
-    <div class="container">
-      <p>© 2026 EletronJun — Empresa Júnior de Engenharia Eletrônica e de Software. Todos os direitos reservados.</p>
-    </div>
-  </div>
-</footer>
+<script src="../js/script.js"></script>
+</body>
+</html>

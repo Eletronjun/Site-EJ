@@ -3,45 +3,49 @@
 
   /* Sticky header shadow on scroll */
   const header = document.getElementById("header");
-  const toggleHeaderShadow = () => {
-    header.classList.toggle("is-scrolled", window.scrollY > 8);
-  };
-  toggleHeaderShadow();
-  window.addEventListener("scroll", toggleHeaderShadow, { passive: true });
+  if (header) {
+    const toggleHeaderShadow = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > 8);
+    };
+    toggleHeaderShadow();
+    window.addEventListener("scroll", toggleHeaderShadow, { passive: true });
+  }
 
   /* Mobile nav toggle */
   const navToggle = document.getElementById("navToggle");
   const nav = document.getElementById("primaryNav");
 
-  const closeNav = () => {
-    nav.classList.remove("is-open");
-    navToggle.setAttribute("aria-expanded", "false");
-  };
+  if (navToggle && nav) {
+    const closeNav = () => {
+      nav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    };
 
-  const openNav = () => {
-    nav.classList.add("is-open");
-    navToggle.setAttribute("aria-expanded", "true");
-  };
+    const openNav = () => {
+      nav.classList.add("is-open");
+      navToggle.setAttribute("aria-expanded", "true");
+    };
 
-  navToggle.addEventListener("click", () => {
-    const isOpen = nav.classList.contains("is-open");
-    isOpen ? closeNav() : openNav();
-  });
+    navToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.contains("is-open");
+      isOpen ? closeNav() : openNav();
+    });
 
-  nav.querySelectorAll(".nav-link, .nav-cta").forEach((link) => {
-    link.addEventListener("click", closeNav);
-  });
+    nav.querySelectorAll(".nav-link, .nav-cta").forEach((link) => {
+      link.addEventListener("click", closeNav);
+    });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeNav();
-  });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNav();
+    });
 
-  document.addEventListener("click", (e) => {
-    const isOpen = nav.classList.contains("is-open");
-    if (!isOpen) return;
-    if (nav.contains(e.target) || navToggle.contains(e.target)) return;
-    closeNav();
-  });
+    document.addEventListener("click", (e) => {
+      const isOpen = nav.classList.contains("is-open");
+      if (!isOpen) return;
+      if (nav.contains(e.target) || navToggle.contains(e.target)) return;
+      closeNav();
+    });
+  }
 
   /* Active nav link on click */
   const navLinks = document.querySelectorAll(".nav-link");

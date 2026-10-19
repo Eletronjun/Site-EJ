@@ -180,6 +180,16 @@ button {
 }
 
 /* ==========================================================================
+   Web Components
+   ========================================================================== */
+site-header,
+site-footer,
+site-whatsapp,
+whatsapp-btn {
+  display: contents;
+}
+
+/* ==========================================================================
    Header
    ========================================================================== */
 .site-header {
@@ -817,6 +827,35 @@ button {
   font-size: 0.82rem;
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================================================
+   Botão Flutuante do WhatsApp
+   ========================================================================== */
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--green-bright);
+  color: #16330a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  z-index: 400;
+  transition: transform 0.2s var(--ease);
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
 }
 
 /* ==========================================================================

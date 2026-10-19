@@ -857,4 +857,14 @@ button {
   .nav-toggle span {
     transition: none !important;
   }
+
+/* Correção de Sobrescrita da Sidebar Movel */
+@media (max-width: 992px) {
+  .nav.is-open,
+  .nav.nav-open {
+    transform: translateX(0) !important;
+    display: flex !important;
+  }
+}
+
 }

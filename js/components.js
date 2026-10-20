@@ -1,19 +1,107 @@
 /**
  * EletronJun — Componentes Web Modulares (Web Components Vanilla)
  *
- * Permite reutilizar o Cabeçalho, Rodapé e Botão Flutuante do WhatsApp
- * em todas as páginas sem duplicar código HTML.
+ * Reutiliza Cabeçalho, Rodapé, Botão Flutuante do WhatsApp e
+ * Gerenciador de Tema (Dark Mode / Light Mode).
  *
- * Uso:
- *   <site-header data-root="./" data-active="inicio"></site-header>
- *   <site-footer data-root="./"></site-footer>
- *   <site-whatsapp></site-whatsapp>
+ * Suporte a detecção automática de preferência do dispositivo
+ * (prefers-color-scheme) e persistência via localStorage.
  */
 
 (() => {
   "use strict";
 
-  /* Helper para resolver o caminho base (./ para raiz, ../ para páginas em /pages/) */
+  /* ==========================================================================
+     Gerenciamento de Tema (Dark Mode / Light Mode)
+     ========================================================================== */
+  const THEME_STORAGE_KEY = "ej-theme-preference";
+
+  const getSystemTheme = () => {
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+
+  const getSavedTheme = () => {
+    try {
+      return localStorage.getItem(THEME_STORAGE_KEY);
+    } catch {
+      return null;
+    }
+  };
+
+  const getCurrentTheme = () => {
+    return document.documentElement.getAttribute("data-theme") || getSavedTheme() || getSystemTheme();
+  };
+
+  const applyTheme = (theme, save = true) => {
+    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.style.colorScheme = theme;
+
+    if (save) {
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, theme);
+      } catch {
+        // localStorage indisponível (navegação anônima restrita etc.)
+      }
+    }
+
+    // Atualiza o estado acessível dos botões de alternância na página
+    const isDark = theme === "dark";
+    const label = isDark ? "Mudar para modo claro" : "Mudar para modo escuro";
+    const title = isDark ? "Ativar modo claro" : "Ativar modo escuro";
+
+    document.querySelectorAll(".theme-toggle").forEach((btn) => {
+      btn.setAttribute("aria-label", label);
+      btn.setAttribute("title", title);
+      btn.setAttribute("aria-pressed", isDark ? "true" : "false");
+    });
+  };
+
+  const toggleTheme = () => {
+    const nextTheme = getCurrentTheme() === "dark" ? "light" : "dark";
+    applyTheme(nextTheme, true);
+  };
+
+  // Expor helpers globalmente para outros scripts se necessário
+  window.__ejToggleTheme = toggleTheme;
+  window.__ejApplyTheme = applyTheme;
+
+  // Aplicação IMEDIATA (executa durante o parse do head para evitar FOUC)
+  const initialTheme = getSavedTheme() || getSystemTheme();
+  applyTheme(initialTheme, false);
+
+  // Escutar mudanças no tema do sistema operacional/dispositivo
+  if (window.matchMedia) {
+    try {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const handleSystemChange = (e) => {
+        // Se o usuário NÃO definiu manualmente uma preferência no localStorage, segue o dispositivo
+        if (!getSavedTheme()) {
+          applyTheme(e.matches ? "dark" : "light", false);
+        }
+      };
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener("change", handleSystemChange);
+      } else if (mediaQuery.addListener) {
+        mediaQuery.addListener(handleSystemChange);
+      }
+    } catch {
+      // Ignora navegadores antigos sem suporte
+    }
+  }
+
+  // Sincronizar tema entre abas abertas
+  window.addEventListener("storage", (e) => {
+    if (e.key === THEME_STORAGE_KEY) {
+      const newTheme = e.newValue || getSystemTheme();
+      applyTheme(newTheme, false);
+    }
+  });
+
+  /* ==========================================================================
+     Helpers de Resolução de Caminhos
+     ========================================================================== */
   const resolveRoot = (el) => {
     if (el.hasAttribute("data-root")) {
       return el.getAttribute("data-root");
@@ -22,7 +110,6 @@
     return path.includes("/pages/") ? "../" : "./";
   };
 
-  /* Helper para detectar a página ativa */
   const resolveActive = (el) => {
     if (el.hasAttribute("data-active")) {
       return el.getAttribute("data-active");
@@ -48,30 +135,62 @@
       const isHome = active === "inicio";
       const homeHref = isHome ? "#top" : `${root}index.html`;
 
+      const currentTheme = getCurrentTheme();
+      const isDark = currentTheme === "dark";
+      const toggleLabel = isDark ? "Mudar para modo claro" : "Mudar para modo escuro";
+      const toggleTitle = isDark ? "Ativar modo claro" : "Ativar modo escuro";
+
       this.innerHTML = `
         <header class="site-header" id="header">
           <div class="container header-inner">
             <a href="${homeHref}" class="logo" aria-label="EletronJun — página inicial">
-              <img class="logo-img" src="${root}assets/logo-full.png" alt="EletronJun" width="1400" height="304">
+              <img class="logo-img logo-light" src="${root}assets/logo-full.png" alt="EletronJun" width="1400" height="304">
+              <img class="logo-img logo-dark" src="${root}assets/logo-footer.svg" alt="EletronJun" width="338" height="71">
             </a>
 
-            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menu de navegação">
-              <span></span><span></span><span></span>
-            </button>
+            <div class="header-right">
+              <nav class="nav" id="primaryNav">
+                <ul class="nav-list">
+                  <li><a href="${homeHref}" class="nav-link ${active === 'inicio' ? 'active' : ''}">Início</a></li>
+                  <li><a href="${root}pages/sobre.html" class="nav-link ${active === 'sobre' ? 'active' : ''}">Sobre Nós</a></li>
+                  <li><a href="${root}servicos.html" class="nav-link ${active === 'servicos' ? 'active' : ''}">Serviços</a></li>
+                  <li><a href="${root}pages/blog.html" class="nav-link ${active === 'blog' ? 'active' : ''}">Blog</a></li>
+                  <li><a href="${root}pages/projetos.html" class="nav-link ${active === 'projetos' ? 'active' : ''}">Projetos</a></li>
+                </ul>
+                <a href="${root}pages/diagnostico.html" class="btn btn-primary btn-sm nav-cta ${active === 'diagnostico' ? 'active' : ''}">Diagnóstico Gratuito</a>
+              </nav>
 
-            <nav class="nav" id="primaryNav">
-              <ul class="nav-list">
-                <li><a href="${homeHref}" class="nav-link ${active === 'inicio' ? 'active' : ''}">Início</a></li>
-                <li><a href="${root}pages/sobre.html" class="nav-link ${active === 'sobre' ? 'active' : ''}">Sobre Nós</a></li>
-                <li><a href="${root}servicos.html" class="nav-link ${active === 'servicos' ? 'active' : ''}">Serviços</a></li>
-                <li><a href="${root}pages/blog.html" class="nav-link ${active === 'blog' ? 'active' : ''}">Blog</a></li>
-                <li><a href="${root}pages/projetos.html" class="nav-link ${active === 'projetos' ? 'active' : ''}">Projetos</a></li>
-              </ul>
-              <a href="${root}pages/diagnostico.html" class="btn btn-primary btn-sm nav-cta ${active === 'diagnostico' ? 'active' : ''}">Diagnóstico Gratuito</a>
-            </nav>
+              <button class="theme-toggle" id="themeToggle" type="button" aria-label="${toggleLabel}" title="${toggleTitle}" aria-pressed="${isDark ? 'true' : 'false'}">
+                <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              </button>
+
+              <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menu de navegação">
+                <span></span><span></span><span></span>
+              </button>
+            </div>
           </div>
         </header>
       `;
+
+      const themeBtn = this.querySelector("#themeToggle");
+      if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+          toggleTheme();
+        });
+      }
     }
   }
 

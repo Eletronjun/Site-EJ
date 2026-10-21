@@ -1007,7 +1007,7 @@ whatsapp-btn {
   .nav {
     position: fixed;
     inset: var(--header-h) 0 0 auto;
-    width: min(340px, 82vw);
+    width:  100vw;
     height: calc(100vh - var(--header-h));
     background: var(--white);
     flex-direction: column;

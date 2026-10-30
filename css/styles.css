@@ -224,12 +224,12 @@ button {
 .btn-white {
   background: var(--white);
   color: var(--ink);
-  border-color: var(--white);
+  border-color: var(--pure-white);
 }
 
 .btn-white:hover {
   background: transparent;
-  color: var(--white);
+  color: var(--pure-white);
   border-color: rgba(255, 255, 255, 0.7);
 }
 

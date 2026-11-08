@@ -250,6 +250,62 @@
   /* ==========================================================================
      <site-whatsapp> (e alias <whatsapp-btn>)
      ========================================================================== */
+     document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal-diagnostico');
+  const form = document.getElementById('form-diagnostico');
+  
+  //whatsapp pop up abaixo
+  //  numero de whatsapp da EJ OBS:apenas números, com código do país 55
+  const NUMERO_WHATSAPP = '5561974027117'; // <--- número real
+
+  if (!modal) return;
+
+  // 1. Abrir o modal ao clicar em qualquer botão marcado
+  document.querySelectorAll('[data-modal-target="diagnostico"]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.showModal();
+    });
+  });
+
+  // 2. Fechar no botão X
+  const closeBtn = modal.querySelector('.modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => modal.close());
+  }
+
+  // 3. Fechar ao clicar fora da caixa do modal
+  modal.addEventListener('click', (e) => {
+    const rect = modal.getBoundingClientRect();
+    if (
+      e.clientX < rect.left ||
+      e.clientX > rect.right ||
+      e.clientY < rect.top ||
+      e.clientY > rect.bottom
+    ) {
+      modal.close();
+    }
+  });
+
+  // 4. Montar a mensagem e abrir o WhatsApp no submit
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('diag-nome').value;
+      const telefone = document.getElementById('diag-telefone').value;
+
+      const texto = `Olá! Vim do site e gostaria de solicitar um diagnóstico gratuito.`;
+      const urlWhatsApp = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`;
+
+      window.open(urlWhatsApp, '_blank');
+
+      form.reset();
+      modal.close();
+    });
+  }
+});
+///
   class SiteWhatsapp extends HTMLElement {
     connectedCallback() {
       this.style.display = "contents";

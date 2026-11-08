@@ -134,16 +134,61 @@
     <section class="projetos-cta">
       <div class="container projetos-cta-inner">
         <h2 class="projetos-cta-title">Quer ver sua ideia aqui?</h2>
-        <a href="diagnostico.html" class="btn btn-primary projetos-cta-btn">
-          Peça seu diagnóstico gratuito
-        </a>
+        <button type="button" class="btn btn-accent" data-modal-target="diagnostico">
+    Peça seu diagnóstico gratuito!
+  </button>
       </div>
     </section>
+
   </main>
 
   <site-whatsapp></site-whatsapp>
 
   <site-footer data-root="../"></site-footer>
+      <!--pop up whatsapp diagnostico-->
+  <dialog id="modal-diagnostico" class="modal-whatsapp">
+  <div class="modal-header">
+    <div class="modal-title-box">
+      <div class="icon-circle">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Fale com a EletronJun</h3>
+        <span>Resposta em horário comercial</span>
+      </div>
+    </div>
+    <button type="button" class="modal-close" aria-label="Fechar">&times;</button>
+  </div>
+
+  <form id="form-diagnostico" class="modal-body">
+    <p class="modal-desc">Preencha seus dados para iniciarmos a conversa no WhatsApp.</p>
+
+    <div class="form-group">
+      <label for="diag-nome">Seu nome</label>
+      <input type="text" id="diag-nome" required placeholder="Como podemos te chamar?">
+    </div>
+
+    <div class="form-group">
+      <label for="diag-telefone">Telefone (com DDD)</label>
+      <input type="tel" id="diag-telefone" required placeholder="(61) 99999-9999">
+    </div>
+
+    <button type="submit" class="btn-whatsapp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.031 2c-5.517 0-9.993 4.477-9.993 9.993 0 1.763.459 3.486 1.332 5.006L2 22l5.129-1.343c1.472.802 3.136 1.226 4.902 1.226 5.518 0 9.995-4.477 9.995-9.993C22.026 6.477 17.55 2 12.031 2zm5.871 14.128c-.247.694-1.442 1.32-2.008 1.378-.522.053-1.2.083-3.447-.847-2.883-1.194-4.733-4.137-4.877-4.331-.143-.194-1.173-1.56-1.173-2.977 0-1.417.744-2.114 1.009-2.4.265-.286.577-.358.77-.358.193 0 .386 0 .554.009.178.01.419-.068.654.498.247.595.842 2.057.915 2.206.073.149.121.323.023.518-.098.194-.148.314-.294.488-.146.173-.307.387-.439.52-.147.147-.301.308-.13.6.172.292.766 1.266 1.644 2.049 1.129 1.006 2.081 1.318 2.373 1.464.292.146.463.122.634-.073.172-.194.736-.856.932-1.15.195-.293.39-.244.653-.146.264.098 1.677.79 1.967.935.291.146.484.218.555.338.071.122.071.706-.176 1.401z"/>
+      </svg>
+      Continuar no WhatsApp
+    </button>
+
+    <span class="modal-disclaimer">
+      Ao continuar, você será redirecionado(a) para o WhatsApp com uma mensagem pronta para envio.
+    </span>
+  </form>
+</dialog>
+
+  <!---pop up whatsapp diagnostico--->
 
   <script src="../js/script.js"></script>
   <script src="../js/projetos.js"></script>

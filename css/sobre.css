@@ -109,6 +109,7 @@
   width: 72px;
   height: 72px;
   margin: 0 auto 20px;
+  filter: brightness(0) invert(1);
   object-fit: contain;
 }
 
@@ -153,7 +154,7 @@
   width: 100%;
   height: auto;
   border-radius: var(--radius-md);
-  background: var(--white);
+  background-color: #ffffff;
   padding: 12px;
 }
 
@@ -203,6 +204,16 @@
     margin-inline: auto;
   }
 
+  .mvv-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+    object-fit: contain;
+    background: transparent;
+    filter: brightness(0);
+  }
+}
+
   .movement-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -212,7 +223,7 @@
     max-width: 420px;
     margin-inline: auto;
   }
-}
+
 
 @media (max-width: 768px) {
   .sobre-hero {

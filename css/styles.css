@@ -503,7 +503,7 @@ whatsapp-btn {
 .hero {
   position: relative;
   overflow: hidden;
-  background: #0c1712 url("../assets/hero-bg.svg") center / cover no-repeat;
+  background: #0c1712 url("../assets/todos_os_membros.jpg") center / cover no-repeat;
   padding: clamp(90px, 14vw, 160px) 0 clamp(70px, 10vw, 120px);
 }
 
@@ -879,13 +879,10 @@ whatsapp-btn {
 }
 
 .partner-logo {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #9a9a9a;
-  letter-spacing: -0.01em;
-  filter: grayscale(1);
-  opacity: 0.75;
-  transition: opacity 0.2s var(--ease), color 0.2s var(--ease);
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: 0.3s ease;
 }
 
 .partner-logo:hover {
@@ -1433,8 +1430,7 @@ dialog.modal-whatsapp::backdrop {
 }
 
 [data-theme="dark"] .movement-figure img {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border);
+    border: 1px solid var(--border);
 }
 
 /* Regras espelho para prefers-color-scheme quando sem override de data-theme */
@@ -1552,7 +1548,8 @@ dialog.modal-whatsapp::backdrop {
   }
 
   :root:not([data-theme="light"]) .movement-figure img {
-    background-color: var(--card-bg);
     border: 1px solid var(--border);
   }
 }
+
+

@@ -1552,4 +1552,26 @@ dialog.modal-whatsapp::backdrop {
   }
 }
 
+/* Tema claro selecionado manualmente */
+:root[data-theme="light"] .mvv-icon {
+    filter: brightness(0) !important;
+}
 
+/* Tema escuro selecionado manualmente */
+:root[data-theme="dark"] .mvv-icon {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* Tema escuro automático */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .mvv-icon {
+        filter: brightness(0) invert(1) !important;
+    }
+}
+
+/* Tema claro automático */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .mvv-icon {
+        filter: brightness(0) !important;
+    }
+}

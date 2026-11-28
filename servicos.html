@@ -54,32 +54,65 @@
         </div>
     </section>
 
-    <section>
-      <h3 class="services-detailed-title">Serviços Detalhados</h3>
-      <div class="services-description">
-        <div>
-          <h4>Consultoria Eletrônica</h4>
-          <p>Antes de investir tempo e recursos em um projeto, é essencial saber se ele é viável. Nossa consultoria avalia a viabilidade técnica e mercadológica da sua ideia, com análises comparativas e validações que embasam decisões mais seguras. Indicado para: empresas e empreendedores que têm uma ideia mas ainda não sabem se ela é tecnicamente viável ou como executá-la.</p>
-        </div>
-        <div>
-          <h4>Projeto conceitual</h4>
-          <p>Transformamos uma ideia em um plano técnico completo: análise de viabilidade, definição de funcionalidades, seleção de componentes e elaboração do Bill of Materials (BoM) — a base necessária para qualquer desenvolvimento eletrônico dar certo. Indicado para: quem já validou a ideia e precisa de um projeto técnico estruturado antes de partir para o protótipo.</p>
-        </div>
-        <div>
-          <h4>Desenvolvimento de Software</h4>
-          <p>Criamos sistemas personalizados que resolvem problemas reais do seu negócio, desde aplicações simples até soluções mais robustas de monitoramento e automação. Indicado para: empresas que precisam de um sistema sob medida, sem depender de soluções genéricas do mercado.</p>
-        </div>
-        <div>
-          <h4>Layout de Circuito Impresso (PCB)</h4>
-          <p>
-            Desenhamos o layout do seu circuito impresso com foco em eficiência, desempenho e viabilidade de fabricação, reduzindo riscos de falha antes mesmo da produção. Indicado para: projetos que já têm um circuito definido e precisam de um layout profissional pronto para fabricação.
-          </p>
-        </div>
-        <div>
-          <h4>Desenvolvimento de Protótipo</h4>
-          <p>
-            A partir do projeto conceitual validado, construímos um protótipo funcional, testável e pronto para iteração ou produção em escala — o passo que transforma sua ideia em algo tangível. Indicado para: quem já tem o projeto conceitual pronto e quer ver a ideia funcionando de verdade.
-          </p>
+    <section class="services-detailed" aria-labelledby="services-detailed-heading">
+      <div class="container">
+        <h3 id="services-detailed-heading" class="services-detailed-title">Serviços Detalhados</h3>
+
+        <div class="services-carousel" role="region" aria-roledescription="carrossel" aria-label="Serviços Detalhados" tabindex="0">
+          <div class="services-carousel-layout">
+            <button type="button" class="services-arrow services-arrow--prev" aria-label="Serviço anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <div class="service-card-viewport">
+              <div class="service-card-progress" aria-hidden="true">
+                <div class="service-card-progress-bar"></div>
+              </div>
+
+              <div class="service-card-meta">
+                <span class="service-card-counter" aria-live="polite">01 / 05</span>
+              </div>
+
+              <div class="service-card-stage">
+                <article class="service-slide is-active" aria-hidden="false">
+                  <h4>Consultoria Eletrônica</h4>
+                  <p>Antes de investir tempo e recursos em um projeto, é essencial saber se ele é viável. Nossa consultoria avalia a viabilidade técnica e mercadológica da sua ideia, com análises comparativas e validações que embasam decisões mais seguras. Indicado para: empresas e empreendedores que têm uma ideia mas ainda não sabem se ela é tecnicamente viável ou como executá-la.</p>
+                </article>
+                <article class="service-slide" aria-hidden="true">
+                  <h4>Projeto conceitual</h4>
+                  <p>Transformamos uma ideia em um plano técnico completo: análise de viabilidade, definição de funcionalidades, seleção de componentes e elaboração do Bill of Materials (BoM) a base necessária para qualquer desenvolvimento eletrônico dar certo. Indicado para: quem já validou a ideia e precisa de um projeto técnico estruturado antes de partir para o protótipo.</p>
+                </article>
+                <article class="service-slide" aria-hidden="true">
+                  <h4>Desenvolvimento de Software</h4>
+                  <p>Criamos sistemas personalizados que resolvem problemas reais do seu negócio, desde aplicações simples até soluções mais robustas de monitoramento e automação. Indicado para: empresas que precisam de um sistema sob medida, sem depender de soluções genéricas do mercado.</p>
+                </article>
+                <article class="service-slide" aria-hidden="true">
+                  <h4>Layout de Circuito Impresso (PCB)</h4>
+                  <p>Desenhamos o layout do seu circuito impresso com foco em eficiência, desempenho e viabilidade de fabricação, reduzindo riscos de falha antes mesmo da produção. Indicado para: projetos que já têm um circuito definido e precisam de um layout profissional pronto para fabricação.</p>
+                </article>
+                <article class="service-slide" aria-hidden="true">
+                  <h4>Desenvolvimento de Protótipo</h4>
+                  <p>A partir do projeto conceitual validado, construímos um protótipo funcional, testável e pronto para iteração ou produção em escala o passo que transforma sua ideia em algo tangível. Indicado para: quem já tem o projeto conceitual pronto e quer ver a ideia funcionando de verdade.</p>
+                </article>
+              </div>
+            </div>
+
+            <button type="button" class="services-arrow services-arrow--next" aria-label="Próximo serviço">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <div class="services-carousel-dots" role="tablist" aria-label="Selecionar serviço">
+              <button type="button" class="services-dot is-active" role="tab" aria-selected="true" aria-label="Ver Consultoria Eletrônica" data-index="0"></button>
+              <button type="button" class="services-dot" role="tab" aria-selected="false" aria-label="Ver Projeto conceitual" data-index="1"></button>
+              <button type="button" class="services-dot" role="tab" aria-selected="false" aria-label="Ver Desenvolvimento de Software" data-index="2"></button>
+              <button type="button" class="services-dot" role="tab" aria-selected="false" aria-label="Ver Layout de Circuito Impresso (PCB)" data-index="3"></button>
+              <button type="button" class="services-dot" role="tab" aria-selected="false" aria-label="Ver Desenvolvimento de Protótipo" data-index="4"></button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

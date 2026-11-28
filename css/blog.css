@@ -244,6 +244,13 @@ body.blog-page {
   gap: 12px 56px;
 }
 
+@media (max-width: 768px) {
+  .site-footer .footer-nav {
+    justify-content: center;
+    justify-items: center;
+  }
+}
+
 @media (max-width: 480px) {
   .site-footer .footer-nav {
     grid-template-columns: 1fr;
